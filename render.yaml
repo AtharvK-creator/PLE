@@ -1,0 +1,53 @@
+services:
+  # NestJS API — Render Web Service
+  - type: web
+    name: ple-api
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: pnpm install --frozen-lockfile && pnpm --filter @ple/api build
+    startCommand: node apps/api/dist/main.js
+    rootDir: .
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_ACCESS_EXPIRES
+        value: 15m
+      - key: JWT_REFRESH_EXPIRES
+        value: 7d
+      - key: AI_PROVIDER
+        value: gemini
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash-preview-05-20
+      - key: GEMINI_MODEL_QUIZ
+        value: gemini-2.5-flash-lite-preview-06-17
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.1-70b-versatile
+      - key: GROQ_MODEL_QUIZ
+        value: llama-3.1-8b-instant
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_CALLBACK_URL
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: POSTHOG_API_KEY
+        sync: false
+      - key: N8N_WEBHOOK_SECRET
+        sync: false
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
