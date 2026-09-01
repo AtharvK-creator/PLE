@@ -138,11 +138,21 @@ export class AIGatewayService {
     let content = response.content.trim();
 
     // Strip markdown code blocks if present (models sometimes wrap JSON in ```json ... ```)
-    content = content.replace(/^```(?:json)?\s*/m, '').replace(/\s*```\s*$/m, '').trim();
+    content = content.replace(/^```(?:json)?\s*/g, '').replace(/\s*```\s*$/g, '').trim();
 
     try {
       return JSON.parse(content) as T;
     } catch {
+      // Secondary fallback: Extract first JSON object or array match from response text
+      const jsonMatch = content.match(/(\{[\s\S]*\}|\[[\s\S]*\])/);
+      if (jsonMatch) {
+        try {
+          return JSON.parse(jsonMatch[1]) as T;
+        } catch {
+          // ignore
+        }
+      }
+
       this.logger.error(
         `Failed to parse JSON response: ${content.substring(0, 200)}...`,
       );

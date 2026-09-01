@@ -20,6 +20,7 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { HealthModule } from './modules/health/health.module';
 import { NewsModule } from './modules/news/news.module';
 import { EytModule } from './modules/eyt/eyt.module';
+import { IntelligenceModule } from './modules/intelligence/intelligence.module';
 
 @Module({
   imports: [
@@ -90,6 +91,7 @@ import { EytModule } from './modules/eyt/eyt.module';
     WebhooksModule,
     NewsModule,
     EytModule,
+    IntelligenceModule,
 
     // Infrastructure modules
     AIGatewayModule,

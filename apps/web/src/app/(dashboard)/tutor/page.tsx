@@ -31,20 +31,17 @@ import {
   X,
   ExternalLink,
 } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-import rehypeHighlight from 'rehype-highlight';
-import rehypeRaw from 'rehype-raw';
-import rehypeKatex from 'rehype-katex';
+import dynamic from 'next/dynamic';
 import apiClient from '@/lib/api-client';
 import { useToast } from '@/hooks/use-toast';
 import { useAuthStore } from '@/store/auth.store';
 import { Button } from '@/components/ui/button';
 import { LearningSessionDto, MessageDto, SendMessageDto } from '@ple/types';
 
-import 'katex/dist/katex.min.css';
-import 'highlight.js/styles/github-dark.css';
+const MarkdownRenderer = dynamic(() => import('./markdown-renderer'), {
+  loading: () => <div className="animate-pulse bg-muted/20 h-10 w-full rounded" />,
+  ssr: false,
+});
 
 function extractText(node: any): string {
   if (!node) return '';
@@ -520,13 +517,10 @@ function LearningBlock({ section }: { section: { id: string; title: string; type
       </div>
       
       <div className="prose-custom max-w-none">
-        <ReactMarkdown 
-          remarkPlugins={[remarkGfm, remarkMath]} 
-          rehypePlugins={[rehypeHighlight, rehypeRaw, rehypeKatex]}
+        <MarkdownRenderer 
           components={markdownComponents}
-        >
-          {section.content}
-        </ReactMarkdown>
+          content={section.content}
+        />
       </div>
     </div>
   );
@@ -538,13 +532,10 @@ function MIKEMessageContent({ content }: { content: string }) {
   if (sections.length <= 1 && sections[0]?.type === 'general') {
     return (
       <div className="prose-custom max-w-none">
-        <ReactMarkdown 
-          remarkPlugins={[remarkGfm, remarkMath]} 
-          rehypePlugins={[rehypeHighlight, rehypeRaw, rehypeKatex]}
+        <MarkdownRenderer 
           components={markdownComponents}
-        >
-          {content}
-        </ReactMarkdown>
+          content={content}
+        />
       </div>
     );
   }
@@ -1415,9 +1406,8 @@ export default function TutorPage() {
                     >
                       {isUser ? (
                         <div className="prose-custom max-w-none text-primary-foreground">
-                          <ReactMarkdown 
-                            remarkPlugins={[remarkGfm, remarkMath]} 
-                            rehypePlugins={[rehypeHighlight, rehypeRaw, rehypeKatex]}
+                          <MarkdownRenderer 
+                            content={m.content}
                             components={{
                               ...markdownComponents,
                               p: ({ children, ...props }: any) => <p className="mb-2 last:mb-0 leading-relaxed text-base text-primary-foreground" {...props}>{children}</p>,
@@ -1427,9 +1417,7 @@ export default function TutorPage() {
                                 </code>
                               )
                             }}
-                          >
-                            {m.content}
-                          </ReactMarkdown>
+                          />
                           {(() => {
                             const attachment = (m.metadata as any)?.attachment;
                             if (!attachment) return null;

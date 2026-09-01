@@ -55,6 +55,7 @@ enum VectorDocumentType {
   SESSION
   KNOWLEDGE
   SKILL
+  EYT_CHALLENGE
 }
 
 // ============================================
@@ -91,6 +92,7 @@ model User {
   eytDiscussions EytDiscussion[]
   eytRatings     EytRating[]
   difficultyVotes EytDifficultyVote[]
+  conceptMastery StudentConceptMastery[]
 
   @@index([email])
   @@index([googleId])
@@ -495,7 +497,7 @@ model VectorDocument {
   type        VectorDocumentType
   referenceId String
   content     String             @db.Text
-  // embedding   Unsupported("vector(1536)")?
+  embedding   Unsupported("vector(1536)")?
   metadata    Json               @default("{}")
   createdAt   DateTime           @default(now())
 
@@ -616,6 +618,9 @@ model EytChallenge {
   @@index([qualityScore])
   @@index([averageRating])
   @@index([attemptsCount])
+  @@index([industryTags(ops: ArrayOps)], type: Gin)
+  @@index([companyTags(ops: ArrayOps)], type: Gin)
+  @@index([thinkingDomains(ops: ArrayOps)], type: Gin)
   @@map("eyt_challenges")
 }
 
@@ -833,4 +838,106 @@ model EytDifficultyVote {
 
   @@unique([userId, challengeId])
   @@map("eyt_difficulty_votes")
+}
+
+// ============================================
+// HYBRID KNOWLEDGE GRAPH & STUDENT MASTERY MODELS
+// ============================================
+
+enum KnowledgeNodeType {
+  CONCEPT
+  SKILL
+  CHALLENGE
+  QUESTION
+  ROADMAP_STEP
+}
+
+enum KnowledgeRelationship {
+  PREREQUISITE_FOR
+  TEACHES
+  TESTED_BY
+  RELATED_TO
+  PART_OF
+  REQUIRES
+}
+
+enum MasteryStatus {
+  WEAK_IN
+  LEARNING
+  MASTERED
+}
+
+model KnowledgeNode {
+  id          String            @id @default(cuid())
+  name        String
+  slug        String            @unique
+  type        KnowledgeNodeType
+  description String?           @db.Text
+  difficulty  String?           @default("INTERMEDIATE")
+  metadata    Json              @default("{}")
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  outgoingEdges  KnowledgeEdge[]         @relation("SourceNode")
+  incomingEdges  KnowledgeEdge[]         @relation("TargetNode")
+  studentMastery StudentConceptMastery[]
+  graphEmbedding GraphNodeEmbedding?
+
+  @@index([type])
+  @@index([slug])
+  @@map("knowledge_nodes")
+}
+
+model KnowledgeEdge {
+  id           String                @id @default(cuid())
+  sourceId     String
+  targetId     String
+  relationship KnowledgeRelationship
+  weight       Float                 @default(1.0)
+  provenance   String                @default("EXPLICIT") // EXPLICIT, DERIVED, AI
+  metadata     Json                  @default("{}")
+  createdAt    DateTime              @default(now())
+
+  sourceNode KnowledgeNode @relation("SourceNode", fields: [sourceId], references: [id], onDelete: Cascade)
+  targetNode KnowledgeNode @relation("TargetNode", fields: [targetId], references: [id], onDelete: Cascade)
+
+  @@unique([sourceId, targetId, relationship])
+  @@index([sourceId])
+  @@index([targetId])
+  @@index([relationship])
+  @@map("knowledge_edges")
+}
+
+model StudentConceptMastery {
+  id             String        @id @default(cuid())
+  userId         String
+  nodeId         String
+  masteryScore   Float         @default(0.0) // 0.0 to 1.0
+  confidence     Float         @default(0.5) // 0.0 to 1.0
+  status         MasteryStatus @default(LEARNING)
+  attemptsCount  Int           @default(0)
+  lastAssessedAt DateTime      @default(now())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  user User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  node KnowledgeNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, nodeId])
+  @@index([userId, status])
+  @@map("student_concept_mastery")
+}
+
+model GraphNodeEmbedding {
+  id         String   @id @default(cuid())
+  nodeId     String   @unique
+  model      String   @default("deepwalk-node2vec")
+  dimensions Int      @default(128)
+  embedding  Unsupported("vector(128)")?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  node KnowledgeNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@map("graph_node_embeddings")
 }

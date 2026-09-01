@@ -10,6 +10,8 @@ import { TutorMode } from '@prisma/client';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
+import { HybridRetrievalService } from '../intelligence/services/hybrid-retrieval.service';
+
 @Injectable()
 export class TutorService {
   private readonly logger = new Logger(TutorService.name);
@@ -19,6 +21,7 @@ export class TutorService {
     private readonly prisma: PrismaService,
     private readonly aiGateway: AIGatewayService,
     private readonly analytics: AnalyticsService,
+    private readonly hybridRetrieval?: HybridRetrievalService,
   ) {}
 
   async createSession(userId: string, dto: CreateSessionDto): Promise<LearningSessionDto> {
@@ -146,10 +149,21 @@ export class TutorService {
     }
 
     const promptInput = await this.getTutorPromptInput(userId);
-    const systemPrompt =
+    let systemPrompt =
       session.mode === 'CODE'
         ? buildCodeTutorSystemPrompt(promptInput, dto.expertMode)
         : buildTutorSystemPrompt(promptInput);
+
+    if (this.hybridRetrieval) {
+      try {
+        const smartResult = await this.hybridRetrieval.retrieveHybridContext(userId, dto.content);
+        if (smartResult.isSmartPath && smartResult.promptContext) {
+          systemPrompt += `\n\n${smartResult.promptContext}`;
+        }
+      } catch (e: any) {
+        this.logger.warn(`Smart Path retrieval fallback: ${e.message}`);
+      }
+    }
 
     const providerOverride = session.mode === 'CODE' ? 'groq' : 'gemini';
 
