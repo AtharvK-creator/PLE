@@ -7,8 +7,10 @@ export class KnowledgeGraphSeeder implements OnModuleInit {
 
   constructor(private readonly graphService: GraphService) {}
 
-  async onModuleInit() {
-    await this.seedGraph();
+  onModuleInit() {
+    this.seedGraph().catch((err) => {
+      this.logger.warn(`Knowledge Graph seed background init warning: ${err.message}`);
+    });
   }
 
   async seedGraph() {

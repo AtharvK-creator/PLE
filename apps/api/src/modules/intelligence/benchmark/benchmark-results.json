@@ -1,0 +1,92 @@
+{
+  "VECTOR_ONLY": {
+    "name": "A. Vector Only",
+    "sampleSize": 150,
+    "latency": {
+      "mean": 43.99,
+      "median": 43.83,
+      "p50": 43.83,
+      "p95": 47.62,
+      "p99": 47.89,
+      "stdDev": 2.36,
+      "min": 40.01,
+      "max": 47.91
+    },
+    "precisionAt5": 0.2653,
+    "recallAt5": 0.5844,
+    "mrr": 0.5394,
+    "ndcgAt5": 0.4705
+  },
+  "GRAPH_ONLY": {
+    "name": "B. Graph Only",
+    "sampleSize": 150,
+    "latency": {
+      "mean": 36.04,
+      "median": 35.89,
+      "p50": 35.89,
+      "p95": 38.65,
+      "p99": 38.95,
+      "stdDev": 1.81,
+      "min": 33.08,
+      "max": 39
+    },
+    "precisionAt5": 0.2893,
+    "recallAt5": 0.6522,
+    "mrr": 0.5606,
+    "ndcgAt5": 0.5244
+  },
+  "HYBRID": {
+    "name": "C. Hybrid (Graph + Vector)",
+    "sampleSize": 150,
+    "latency": {
+      "mean": 84.12,
+      "median": 84.28,
+      "p50": 84.28,
+      "p95": 89.54,
+      "p99": 89.76,
+      "stdDev": 3.68,
+      "min": 78.1,
+      "max": 89.92
+    },
+    "precisionAt5": 0.2867,
+    "recallAt5": 0.6411,
+    "mrr": 0.5811,
+    "ndcgAt5": 0.5297
+  },
+  "HYBRID_CONTEXT": {
+    "name": "D. Hybrid + Student Context",
+    "sampleSize": 150,
+    "latency": {
+      "mean": 112.07,
+      "median": 111.68,
+      "p50": 111.68,
+      "p95": 119.35,
+      "p99": 119.78,
+      "stdDev": 4.35,
+      "min": 105.03,
+      "max": 119.91
+    },
+    "precisionAt5": 0.4013,
+    "recallAt5": 0.8978,
+    "mrr": 0.9552,
+    "ndcgAt5": 0.8715
+  },
+  "HYBRID_GRAPH_EMBEDDING": {
+    "name": "E. Hybrid + Context + Graph Embedding",
+    "sampleSize": 150,
+    "latency": {
+      "mean": 136.87,
+      "median": 137.22,
+      "p50": 137.22,
+      "p95": 144.99,
+      "p99": 145.64,
+      "stdDev": 5.28,
+      "min": 128.12,
+      "max": 145.68
+    },
+    "precisionAt5": 0.4053,
+    "recallAt5": 0.9044,
+    "mrr": 0.9246,
+    "ndcgAt5": 0.8597
+  }
+}

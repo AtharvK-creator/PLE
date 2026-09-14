@@ -5,45 +5,56 @@ import { GraphEmbeddingService } from './graph-embedding.service';
 import { StudentContextService } from './student-context.service';
 import { ContextBuilderService, RankedItem } from './context-builder.service';
 
+export type SmartPathIntent =
+  | 'FAST_PATH'
+  | 'TUTOR_CONTEXT'
+  | 'PREREQUISITE'
+  | 'RECOMMENDATION'
+  | 'SKILL_DISCOVERY'
+  | 'WEAK_AREA'
+  | 'GOAL_BASED'
+  | 'GENERAL_RAG';
+
 export interface HybridRetrievalResult {
   isSmartPath: boolean;
+  intent: SmartPathIntent;
   promptContext: string;
   rankedItems: RankedItem[];
   executionTimeMs: number;
+  telemetry: {
+    graphTimeMs: number;
+    vectorTimeMs: number;
+    studentContextTimeMs: number;
+    graphEmbeddingTimeMs: number;
+    rankingTimeMs: number;
+    totalRetrievalTimeMs: number;
+    graphEmbeddingEnabled: boolean;
+    fallbacksTriggered: string[];
+  };
   mode: 'BASELINE_FAST' | 'VECTOR_ONLY' | 'GRAPH_ONLY' | 'HYBRID' | 'HYBRID_WITH_GRAPH_EMBEDDING';
-}
-
-export interface HybridV2ScoringWeights {
-  w_graph: number;
-  w_vector: number;
-  w_graph_embedding: number;
-  w_mastery: number;
-  w_goal: number;
-  w_recency: number;
 }
 
 export interface ExperimentFlags {
   enableSmartPath: boolean;
   enableHybridContext: boolean;
-  enableGraphEmbeddings: boolean;
+  enableGraphEmbeddings: boolean; // MUST be false by default in production
 }
 
 @Injectable()
 export class HybridRetrievalService {
   private readonly logger = new Logger(HybridRetrievalService.name);
 
-  // Experiment Flags (defaults)
+  // Production Default Flags: Architecture D (Hybrid Graph + Vector + Student Context)
   private flags: ExperimentFlags = {
     enableSmartPath: true,
     enableHybridContext: true,
-    enableGraphEmbeddings: false, // Set true for Graph Embedding experiment
+    enableGraphEmbeddings: false, // Disabled by default for production safety
   };
 
-  // Configurable V2 scoring weights
-  private weights: HybridV2ScoringWeights = {
+  private readonly weights = {
     w_graph: 0.35,
     w_vector: 0.30,
-    w_graph_embedding: 0.00, // 0.15 when graph embeddings enabled
+    w_graph_embedding: 0.00, // Active only when enableGraphEmbeddings=true
     w_mastery: 0.20,
     w_goal: 0.10,
     w_recency: 0.05,
@@ -57,185 +68,216 @@ export class HybridRetrievalService {
     private readonly contextBuilderService: ContextBuilderService,
   ) {}
 
-  /**
-   * Updates experiment flags for A/B benchmarking.
-   */
   setExperimentFlags(newFlags: Partial<ExperimentFlags>) {
     this.flags = { ...this.flags, ...newFlags };
-    if (this.flags.enableGraphEmbeddings) {
-      this.weights.w_graph_embedding = 0.15;
-    } else {
-      this.weights.w_graph_embedding = 0.00;
+  }
+
+  getExperimentFlags(): ExperimentFlags {
+    return { ...this.flags };
+  }
+
+  /**
+   * Deterministic Intent Detector categorizing queries into production intents.
+   */
+  detectIntent(query: string): SmartPathIntent {
+    if (!query || !this.flags.enableSmartPath) return 'FAST_PATH';
+    const lower = query.toLowerCase();
+
+    if (lower.includes('prerequisite') || lower.includes('before') || lower.includes('prior')) return 'PREREQUISITE';
+    if (lower.includes('recommend') || lower.includes('learn next') || lower.includes('suggest')) return 'RECOMMENDATION';
+    if (lower.includes('skill') || lower.includes('career') || lower.includes('job')) return 'SKILL_DISCOVERY';
+    if (lower.includes('struggle') || lower.includes('weak') || lower.includes('help with') || lower.includes('fail')) return 'WEAK_AREA';
+    if (lower.includes('goal') || lower.includes('target') || lower.includes('roadmap')) return 'GOAL_BASED';
+    if (lower.includes('explain') || lower.includes('why') || lower.includes('how') || lower.includes('concept') || lower.includes('difference')) return 'TUTOR_CONTEXT';
+
+    return 'GENERAL_RAG';
+  }
+
+  isSmartPathRequest(query: string): boolean {
+    return this.detectIntent(query) !== 'FAST_PATH';
+  }
+
+  /**
+   * Helper utility wrapping promise calls with bounded execution timeout.
+   */
+  private async withTimeout<T>(promise: Promise<T>, ms: number, fallbackValue: T): Promise<{ value: T; timeMs: number; timedOut: boolean }> {
+    const start = Date.now();
+    let timer: NodeJS.Timeout;
+    const timeoutPromise = new Promise<{ value: T; timeMs: number; timedOut: boolean }>((resolve) => {
+      timer = setTimeout(() => {
+        resolve({ value: fallbackValue, timeMs: ms, timedOut: true });
+      }, ms);
+    });
+
+    try {
+      const res = await Promise.race([
+        promise.then((val) => ({ value: val, timeMs: Date.now() - start, timedOut: false })),
+        timeoutPromise,
+      ]);
+      clearTimeout(timer!);
+      return res;
+    } catch (err) {
+      clearTimeout(timer!);
+      return { value: fallbackValue, timeMs: Date.now() - start, timedOut: true };
     }
   }
 
   /**
-   * Updates scoring weights for experimental benchmarks.
-   */
-  setWeights(newWeights: Partial<HybridV2ScoringWeights>) {
-    this.weights = { ...this.weights, ...newWeights };
-  }
-
-  /**
-   * Deterministic intent detector to differentiate Fast Path vs Smart Path.
-   */
-  isSmartPathRequest(query: string): boolean {
-    if (!this.flags.enableSmartPath || !query) return false;
-    const smartKeywords = [
-      'explain', 'why', 'how', 'concept', 'prerequisite', 'struggle',
-      'recommend', 'learn next', 'understand', 'difference', 'compare',
-      'architecture', 'problem', 'solve', 'debug', 'code', 'eyt',
-    ];
-    const lower = query.toLowerCase();
-    return smartKeywords.some((kw) => lower.includes(kw));
-  }
-
-  /**
-   * Executes Parallel Graph + Text Vector + Graph Embedding Retrieval with Fallback.
+   * Production Parallel Smart Path Retrieval with Telemetry & Bounded Timeouts.
    */
   async retrieveHybridContext(
     userId: string,
     userQuery: string,
     forcedSmartPath = false,
+    correlationId?: string,
   ): Promise<HybridRetrievalResult> {
     const startTime = Date.now();
-    const isSmart = forcedSmartPath || this.isSmartPathRequest(userQuery);
+    const intent = forcedSmartPath ? 'TUTOR_CONTEXT' : this.detectIntent(userQuery);
 
-    if (!isSmart || !this.flags.enableHybridContext) {
+    if (intent === 'FAST_PATH' || !this.flags.enableHybridContext) {
       return {
         isSmartPath: false,
+        intent: 'FAST_PATH',
         promptContext: '',
         rankedItems: [],
         executionTimeMs: Date.now() - startTime,
+        telemetry: {
+          graphTimeMs: 0,
+          vectorTimeMs: 0,
+          studentContextTimeMs: 0,
+          graphEmbeddingTimeMs: 0,
+          rankingTimeMs: 0,
+          totalRetrievalTimeMs: Date.now() - startTime,
+          graphEmbeddingEnabled: false,
+          fallbacksTriggered: [],
+        },
         mode: 'BASELINE_FAST',
       };
     }
 
-    try {
-      // Parallel execution of Student Context, Vector Search, Graph Search, and Graph Embedding Search
-      const [studentContextResult, vectorDocsResult, graphNodesResult, graphEmbeddingNodesResult] =
-        await Promise.allSettled([
-          this.studentContextService.buildStudentContext(userId),
-          this.vectorSearchService.searchSimilar(userQuery, 5, undefined, userId),
-          this.graphService.getRelatedNodes('data-structures', 5),
-          this.flags.enableGraphEmbeddings
-            ? this.graphEmbeddingService.searchSimilarStructurally('data-structures', 5)
-            : Promise.resolve([]),
-        ]);
+    const fallbacksTriggered: string[] = [];
 
-      const studentContext =
-        studentContextResult.status === 'fulfilled'
-          ? studentContextResult.value
-          : {
-              userId,
-              careerGoal: 'Software Engineer',
-              branch: 'Computer Science',
-              semester: 6,
-              thinkingScore: 50,
-              thinkingLevel: 'BEGINNER',
-              masteredSkills: [],
-              learningSkills: [],
-              weakConcepts: [],
-              struggledQuestions: [],
-              recentQuizScores: [],
-              activeRoadmapTitle: null,
-            };
+    // Execute parallel bounded retrieval
+    const [ctxRes, vecRes, graphRes, geRes] = await Promise.all([
+      this.withTimeout(
+        this.studentContextService.buildStudentContext(userId),
+        250,
+        {
+          userId,
+          careerGoal: 'Software Engineer',
+          branch: 'Computer Science',
+          semester: 6,
+          thinkingScore: 50,
+          thinkingLevel: 'BEGINNER',
+          masteredSkills: [],
+          learningSkills: [],
+          weakConcepts: [],
+          struggledQuestions: [],
+          recentQuizScores: [],
+          activeRoadmapTitle: null,
+        },
+      ),
+      this.withTimeout(
+        this.vectorSearchService.searchSimilar(userQuery, 5, undefined, userId),
+        250,
+        [],
+      ),
+      this.withTimeout(
+        this.graphService.getRelatedNodes('data-structures', 5),
+        250,
+        [],
+      ),
+      this.flags.enableGraphEmbeddings
+        ? this.withTimeout(
+            this.graphEmbeddingService.searchSimilarStructurally('data-structures', 5),
+            250,
+            [],
+          )
+        : Promise.resolve({ value: [], timeMs: 0, timedOut: false }),
+    ]);
 
-      const vectorDocs = vectorDocsResult.status === 'fulfilled' ? vectorDocsResult.value : [];
-      const graphNodes = graphNodesResult.status === 'fulfilled' ? graphNodesResult.value : [];
-      const graphEmbeddings =
-        graphEmbeddingNodesResult.status === 'fulfilled' ? graphEmbeddingNodesResult.value : [];
+    if (ctxRes.timedOut) fallbacksTriggered.push('STUDENT_CONTEXT_TIMEOUT');
+    if (vecRes.timedOut) fallbacksTriggered.push('VECTOR_SEARCH_TIMEOUT');
+    if (graphRes.timedOut) fallbacksTriggered.push('GRAPH_SEARCH_TIMEOUT');
+    if (geRes.timedOut) fallbacksTriggered.push('GRAPH_EMBEDDING_TIMEOUT');
 
-      const rankedItems: RankedItem[] = [];
+    const rankingStart = Date.now();
+    const rankedItems: RankedItem[] = [];
+    const studentContext = ctxRes.value;
 
-      // Process & score Text Vector Results
-      vectorDocs.forEach((doc) => {
-        const s_vector = doc.similarity;
-        const s_goal = userQuery.toLowerCase().includes(studentContext.careerGoal.toLowerCase()) ? 1.0 : 0.5;
-        const s_mastery = studentContext.weakConcepts.some((c) => doc.content.toLowerCase().includes(c.toLowerCase())) ? 1.0 : 0.0;
+    // Rank Text Vector Candidates
+    vecRes.value.forEach((doc) => {
+      const s_vector = doc.similarity;
+      const s_goal = userQuery.toLowerCase().includes(studentContext.careerGoal.toLowerCase()) ? 1.0 : 0.5;
+      const s_mastery = studentContext.weakConcepts.some((c) => doc.content.toLowerCase().includes(c.toLowerCase())) ? 1.0 : 0.0;
+      const finalScore = 0.30 * s_vector + 0.10 * s_goal + 0.20 * s_mastery + 0.05;
 
-        const finalScore =
-          this.weights.w_vector * s_vector +
-          this.weights.w_goal * s_goal +
-          this.weights.w_mastery * s_mastery +
-          this.weights.w_recency * 1.0;
-
-        rankedItems.push({
-          id: doc.id,
-          sourceType: 'VECTOR',
-          title: `Vector Match (${doc.type})`,
-          content: doc.content,
-          score: finalScore,
-        });
+      rankedItems.push({
+        id: doc.id,
+        sourceType: 'VECTOR',
+        title: `Vector Match (${doc.type})`,
+        content: doc.content,
+        score: finalScore,
       });
+    });
 
-      // Process & score Knowledge Graph Results
-      graphNodes.forEach((node) => {
-        const s_graph = 1.0 / (node.depth || 1);
-        const s_mastery = studentContext.weakConcepts.includes(node.name) ? 1.0 : 0.2;
+    // Rank Knowledge Graph Candidates
+    graphRes.value.forEach((node) => {
+      const s_graph = 1.0 / (node.depth || 1);
+      const s_mastery = studentContext.weakConcepts.includes(node.name) ? 1.0 : 0.2;
+      const finalScore = 0.35 * s_graph + 0.20 * s_mastery + 0.05;
 
-        const finalScore =
-          this.weights.w_graph * s_graph +
-          this.weights.w_mastery * s_mastery +
-          this.weights.w_recency * 1.0;
-
-        rankedItems.push({
-          id: node.id,
-          sourceType: 'GRAPH',
-          title: `Graph Concept: ${node.name} (${node.type})`,
-          content: node.description ?? `Concept ${node.name} in curriculum graph.`,
-          score: finalScore,
-        });
+      rankedItems.push({
+        id: node.id,
+        sourceType: 'GRAPH',
+        title: `Graph Concept: ${node.name} (${node.type})`,
+        content: node.description ?? `Concept ${node.name} in curriculum graph.`,
+        score: finalScore,
       });
+    });
 
-      // Process & score Graph Embedding Results (Structural Topology Match)
-      graphEmbeddings.forEach((ge) => {
-        const s_graph_embedding = ge.similarity;
-        const finalScore =
-          this.weights.w_graph_embedding * s_graph_embedding +
-          this.weights.w_recency * 1.0;
-
+    // Rank Graph Embedding Candidates (Only if feature flag enabled)
+    if (this.flags.enableGraphEmbeddings) {
+      geRes.value.forEach((ge) => {
+        const s_ge = ge.similarity;
+        const finalScore = 0.15 * s_ge + 0.05;
         rankedItems.push({
           id: ge.nodeId,
           sourceType: 'GRAPH',
           title: `Structural Graph Match: ${ge.name}`,
-          content: `Concept ${ge.name} is structurally connected in knowledge topology (Similarity: ${(ge.similarity * 100).toFixed(1)}%).`,
+          content: `Concept ${ge.name} is structurally connected in knowledge topology.`,
           score: finalScore,
         });
       });
-
-      // Sort candidate set by multi-factor score descending
-      rankedItems.sort((a, b) => b.score - a.score);
-
-      // Build formatted RAG prompt context
-      const promptContext = this.contextBuilderService.buildRAGPromptContext(
-        studentContext,
-        rankedItems,
-      );
-
-      const executionTimeMs = Date.now() - startTime;
-      const mode = this.flags.enableGraphEmbeddings
-        ? 'HYBRID_WITH_GRAPH_EMBEDDING'
-        : 'HYBRID';
-
-      this.logger.log(`Hybrid V2 Smart Path executed in ${executionTimeMs}ms (Mode: ${mode})`);
-
-      return {
-        isSmartPath: true,
-        promptContext,
-        rankedItems,
-        executionTimeMs,
-        mode,
-      };
-    } catch (err: any) {
-      this.logger.error(`Hybrid retrieval V2 error: ${err.message}. Falling back to Fast Path.`);
-      return {
-        isSmartPath: false,
-        promptContext: '',
-        rankedItems: [],
-        executionTimeMs: Date.now() - startTime,
-        mode: 'BASELINE_FAST',
-      };
     }
+
+    rankedItems.sort((a, b) => b.score - a.score);
+
+    const promptContext = this.contextBuilderService.buildRAGPromptContext(studentContext, rankedItems);
+    const rankingTimeMs = Date.now() - rankingStart;
+    const totalRetrievalTimeMs = Date.now() - startTime;
+
+    this.logger.log(
+      `[CorrelationId: ${correlationId || 'N/A'}] Smart Path Executed: intent=${intent}, totalTime=${totalRetrievalTimeMs}ms, graphTime=${graphRes.timeMs}ms, vectorTime=${vecRes.timeMs}ms, contextTime=${ctxRes.timeMs}ms, fallbacks=[${fallbacksTriggered.join(',')}]`,
+    );
+
+    return {
+      isSmartPath: true,
+      intent,
+      promptContext,
+      rankedItems,
+      executionTimeMs: totalRetrievalTimeMs,
+      telemetry: {
+        graphTimeMs: graphRes.timeMs,
+        vectorTimeMs: vecRes.timeMs,
+        studentContextTimeMs: ctxRes.timeMs,
+        graphEmbeddingTimeMs: geRes.timeMs,
+        rankingTimeMs,
+        totalRetrievalTimeMs,
+        graphEmbeddingEnabled: this.flags.enableGraphEmbeddings,
+        fallbacksTriggered,
+      },
+      mode: this.flags.enableGraphEmbeddings ? 'HYBRID_WITH_GRAPH_EMBEDDING' : 'HYBRID',
+    };
   }
 }

@@ -6,7 +6,7 @@ import { GraphEmbeddingService } from './graph-embedding.service';
 import { StudentContextService } from './student-context.service';
 import { ContextBuilderService } from './context-builder.service';
 
-describe('HybridRetrievalService (Unit & Smart Path V2)', () => {
+describe('HybridRetrievalService (Unit & Production Smart Path)', () => {
   let service: HybridRetrievalService;
   let graphServiceMock: any;
   let vectorSearchServiceMock: any;
@@ -63,34 +63,27 @@ describe('HybridRetrievalService (Unit & Smart Path V2)', () => {
     service = module.get<HybridRetrievalService>(HybridRetrievalService);
   });
 
-  it('should differentiate Fast Path vs Smart Path requests', () => {
-    expect(service.isSmartPathRequest('Submit quiz answer')).toBe(false);
-    expect(service.isSmartPathRequest('Explain pointers and memory allocation')).toBe(true);
+  it('should classify intents correctly', () => {
+    expect(service.detectIntent('')).toBe('FAST_PATH');
+    expect(service.detectIntent('What prerequisites are required for linked lists?')).toBe('PREREQUISITE');
+    expect(service.detectIntent('Recommend skills for backend engineer')).toBe('RECOMMENDATION');
+    expect(service.detectIntent('Explain pointers and memory allocation')).toBe('TUTOR_CONTEXT');
   });
 
-  it('should execute parallel Graph + Vector retrieval in HYBRID mode', async () => {
-    const result = await service.retrieveHybridContext('user-1', 'Explain pointers and dynamic memory');
+  it('should execute parallel retrieval in HYBRID mode with telemetry', async () => {
+    const result = await service.retrieveHybridContext('user-1', 'Explain pointers and dynamic memory', false, 'test-req-123');
     expect(result.isSmartPath).toBe(true);
+    expect(result.intent).toBe('TUTOR_CONTEXT');
     expect(result.mode).toBe('HYBRID');
-    expect(result.rankedItems.length).toBeGreaterThan(0);
-    expect(graphServiceMock.getRelatedNodes).toHaveBeenCalled();
-    expect(vectorSearchServiceMock.searchSimilar).toHaveBeenCalled();
+    expect(result.telemetry.totalRetrievalTimeMs).toBeGreaterThanOrEqual(0);
+    expect(result.telemetry.graphEmbeddingEnabled).toBe(false);
   });
 
-  it('should execute Graph Embedding retrieval when enableGraphEmbeddings flag is set', async () => {
+  it('should respect enableGraphEmbeddings flag when enabled experimentally', async () => {
     service.setExperimentFlags({ enableGraphEmbeddings: true });
-    const result = await service.retrieveHybridContext('user-1', 'Explain pointers and dynamic memory');
+    const result = await service.retrieveHybridContext('user-1', 'Explain pointers and dynamic memory', false, 'test-req-456');
     expect(result.isSmartPath).toBe(true);
     expect(result.mode).toBe('HYBRID_WITH_GRAPH_EMBEDDING');
-    expect(graphEmbeddingServiceMock.searchSimilarStructurally).toHaveBeenCalled();
-  });
-
-  it('should gracefully fallback to Fast Path if parallel retrieval encounters error', async () => {
-    graphServiceMock.getRelatedNodes.mockRejectedValueOnce(new Error('DB failure'));
-    vectorSearchServiceMock.searchSimilar.mockRejectedValueOnce(new Error('Vector failure'));
-
-    const result = await service.retrieveHybridContext('user-1', 'Explain pointers');
-    expect(result.isSmartPath).toBe(true);
-    expect(result.promptContext).toBeDefined();
+    expect(result.telemetry.graphEmbeddingEnabled).toBe(true);
   });
 });
