@@ -361,13 +361,13 @@ Formatting Rules:
   // Process and sort articles according to whitelist priority, relevance score, and publishedAt DESC
   private processAndSortArticles(articles: Article[], category: string, cachedTimestamp: number): Article[] {
     // 1. Map category
-    let mapped = articles.map(art => ({ ...art, category }));
+    const mapped = articles.map(art => ({ ...art, category }));
 
     // 2. Filter allowed articles (quality filter)
-    let filtered = mapped.filter(art => this.isAllowedArticle(art));
+    const filtered = mapped.filter(art => this.isAllowedArticle(art));
 
     // 3. Deduplicate
-    let unique = this.deduplicateArticles(filtered);
+    const unique = this.deduplicateArticles(filtered);
 
     // 4. Freshness Filter: Fetch only from last 24 hours
     const now = Date.now();
