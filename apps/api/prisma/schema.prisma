@@ -1,0 +1,944 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum UserRole {
+  STUDENT
+  MODERATOR
+  ADMIN
+}
+
+enum SkillLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum RoadmapStatus {
+  ACTIVE
+  ARCHIVED
+}
+
+enum QuizDifficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum MessageRole {
+  USER
+  ASSISTANT
+}
+
+enum LearningGoalStatus {
+  ACTIVE
+  COMPLETED
+  PAUSED
+}
+
+enum VectorDocumentType {
+  ROADMAP
+  QUIZ
+  SESSION
+  KNOWLEDGE
+  SKILL
+  EYT_CHALLENGE
+}
+
+// ============================================
+// CORE MODELS
+// ============================================
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String?
+  googleId      String?   @unique
+  emailVerified Boolean   @default(false)
+  isActive      Boolean   @default(true)
+  role          UserRole  @default(STUDENT)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  profile        Profile?
+  refreshTokens  RefreshToken[]
+  auditLogs      AuditLog[]
+  roadmaps       Roadmap[]
+  sessions       LearningSession[]
+  quizzes        Quiz[]
+  quizAttempts   QuizAttempt[]
+  userSkills     UserSkill[]
+  learningGoals  LearningGoal[]
+  vectorDocs     VectorDocument[]
+  savedArticles  SavedArticle[]
+  lastOtpRequestAt DateTime?
+  passwordResetOtps PasswordResetOtp[]
+  eytAttempts    EytAttempt[]
+  eytBadges      EytBadge[]
+  eytFavorites   EytFavorite[]
+  eytDiscussions EytDiscussion[]
+  eytRatings     EytRating[]
+  difficultyVotes EytDifficultyVote[]
+  conceptMastery StudentConceptMastery[]
+
+  @@index([email])
+  @@index([googleId])
+  @@index([role])
+  @@index([createdAt])
+  @@map("users")
+}
+
+model Profile {
+  id                     String     @id @default(cuid())
+  userId                 String     @unique
+  name                   String
+  branch                 String
+  semester               Int
+  skillLevel             SkillLevel @default(BEGINNER)
+  careerGoal             String
+  bio                    String?
+  avatarUrl              String?
+  knowledgeDomains       String[]
+  domainSkillLevels      Json       @default("{}")
+  learningStyle          String     @default("VISUAL")
+  careerAwarenessAnswers Json       @default("{}")
+  projectExperience      String     @default("NONE")
+  internshipExperience   String     @default("NONE")
+  interviewReadiness     String     @default("LOW")
+  careerReadinessScore   Int        @default(0)
+  resume                 Json?
+  
+  // EYT Fields
+  thinkingScore                 Int        @default(50)
+  thinkingXP                    Int        @default(0)
+  thinkingLevel                 String     @default("Novice")
+  thinkingRank                  String?
+  currentStreak                 Int        @default(0)
+  bestStreak                    Int        @default(0)
+  challengesSolved              Int        @default(0)
+  scoreLogicalReasoning         Int        @default(0)
+  scoreOriginality              Int        @default(0)
+  scoreReflection               Int        @default(0)
+  scoreCreativity               Int        @default(0)
+  scoreDecomposition            Int        @default(0)
+  scoreAccuracy                 Int        @default(0)
+  scoreConfidenceCalibration    Int        @default(0)
+  totalThinkingTimeSeconds      Int        @default(0)
+  thinkingDNA                   String?
+  achievementTimeline           Json       @default("[]")
+  adaptiveDifficultyLevel       String?    @default("Beginner")
+  adaptiveDifficultyScore       Float      @default(50.0)
+  recommendedDifficulty         EytDifficulty @default(EASY)
+
+  createdAt              DateTime   @default(now())
+  updatedAt              DateTime   @updatedAt
+
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  interests UserInterest[]
+
+  @@index([userId])
+  @@index([branch])
+  @@map("profiles")
+}
+
+model UserInterest {
+  id        String   @id @default(cuid())
+  profileId String
+  topic     String
+  createdAt DateTime @default(now())
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@index([profileId])
+  @@map("user_interests")
+}
+
+// ============================================
+// AUTH MODELS
+// ============================================
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  isRevoked Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRevoked])
+  @@index([token])
+  @@index([expiresAt])
+  @@map("refresh_tokens")
+}
+
+model PasswordResetOtp {
+  id         String   @id @default(cuid())
+  userId     String
+  otpHash    String
+  expiresAt  DateTime
+  used       Boolean  @default(false)
+  attempts   Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("password_reset_otps")
+}
+
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  ipAddress String?
+  userAgent String?
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+  @@index([action])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// ============================================
+// FEATURE FLAGS
+// ============================================
+
+model FeatureFlag {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  enabled     Boolean  @default(true)
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("feature_flags")
+}
+
+// ============================================
+// SKILL CATALOG
+// ============================================
+
+model Skill {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  category    String
+  description String?
+  iconUrl     String?
+  subtopics   Json     @default("[]")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  userSkills    UserSkill[]
+  roadmapSkills RoadmapSkill[]
+
+  @@index([slug])
+  @@index([category])
+  @@map("skills")
+}
+
+model UserSkill {
+  id                 String     @id @default(cuid())
+  userId             String
+  skillId            String
+  level              SkillLevel @default(BEGINNER)
+  completedSubtopics String[]
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill Skill @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, skillId])
+  @@index([userId])
+  @@map("user_skills")
+}
+
+// ============================================
+// LEARNING GOALS
+// ============================================
+
+model LearningGoal {
+  id          String             @id @default(cuid())
+  userId      String
+  title       String
+  description String?
+  targetDate  DateTime?
+  status      LearningGoalStatus @default(ACTIVE)
+  roadmapId   String?
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roadmap Roadmap? @relation(fields: [roadmapId], references: [id], onDelete: SetNull)
+
+  @@index([userId, status])
+  @@index([userId, createdAt])
+  @@map("learning_goals")
+}
+
+// ============================================
+// ROADMAP
+// ============================================
+
+model Roadmap {
+  id        String        @id @default(cuid())
+  userId    String
+  title     String
+  goal      String
+  branch    String
+  semester  Int
+  status    RoadmapStatus @default(ACTIVE)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  steps         RoadmapStep[]
+  learningGoals LearningGoal[]
+
+  @@index([userId, status])
+  @@index([userId, createdAt])
+  @@map("roadmaps")
+}
+
+model RoadmapStep {
+  id          String    @id @default(cuid())
+  roadmapId   String
+  title       String
+  description String    @db.Text
+  weekNumber  Int
+  monthNumber Int
+  orderIndex  Int
+  isCompleted Boolean   @default(false)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  roadmap Roadmap        @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  skills  RoadmapSkill[]
+
+  @@index([roadmapId, weekNumber])
+  @@index([roadmapId, orderIndex])
+  @@map("roadmap_steps")
+}
+
+model RoadmapSkill {
+  id        String   @id @default(cuid())
+  stepId    String
+  skillId   String?
+  skillName String
+  createdAt DateTime @default(now())
+
+  step  RoadmapStep @relation(fields: [stepId], references: [id], onDelete: Cascade)
+  skill Skill?      @relation(fields: [skillId], references: [id], onDelete: SetNull)
+
+  @@index([stepId])
+  @@map("roadmap_skills")
+}
+
+// ============================================
+// AI TUTOR
+// ============================================
+
+enum TutorMode {
+  LEARN
+  CODE
+}
+
+model LearningSession {
+  id        String    @id @default(cuid())
+  userId    String
+  mode      TutorMode @default(LEARN)
+  title     String    @default("New Conversation")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages Message[]
+
+  @@index([userId, mode, createdAt])
+  @@map("learning_sessions")
+}
+
+model Message {
+  id         String      @id @default(cuid())
+  sessionId  String
+  role       MessageRole
+  content    String      @db.Text
+  tokenCount Int?
+  metadata   Json?
+  createdAt  DateTime    @default(now())
+
+  session LearningSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, createdAt])
+  @@map("messages")
+}
+
+// ============================================
+// QUIZ
+// ============================================
+
+model Quiz {
+  id             String         @id @default(cuid())
+  userId         String
+  topic          String
+  subject        String
+  difficulty     QuizDifficulty
+  totalQuestions Int
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questions Question[]
+  attempts  QuizAttempt[]
+
+  @@index([userId, createdAt])
+  @@index([difficulty])
+  @@map("quizzes")
+}
+
+model Question {
+  id           String   @id @default(cuid())
+  quizId       String
+  questionText String   @db.Text
+  orderIndex   Int
+  explanation  String?  @db.Text
+  createdAt    DateTime @default(now())
+
+  quiz           Quiz             @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  options        QuestionOption[]
+  attemptAnswers AttemptAnswer[]
+
+  @@index([quizId, orderIndex])
+  @@map("questions")
+}
+
+model QuestionOption {
+  id          String   @id @default(cuid())
+  questionId  String
+  optionText  String
+  isCorrect   Boolean  @default(false)
+  optionLabel String
+  createdAt   DateTime @default(now())
+
+  question       Question        @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  attemptAnswers AttemptAnswer[]
+
+  @@index([questionId])
+  @@map("question_options")
+}
+
+model QuizAttempt {
+  id               String   @id @default(cuid())
+  quizId           String
+  userId           String
+  score            Int
+  totalQuestions   Int
+  timeTakenSeconds Int
+  completedAt      DateTime @default(now())
+  createdAt        DateTime @default(now())
+
+  quiz    Quiz            @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  user    User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  answers AttemptAnswer[]
+
+  @@index([userId, createdAt])
+  @@index([quizId])
+  @@map("quiz_attempts")
+}
+
+model AttemptAnswer {
+  id               String   @id @default(cuid())
+  attemptId        String
+  questionId       String
+  selectedOptionId String?
+  isCorrect        Boolean
+  createdAt        DateTime @default(now())
+
+  attempt        QuizAttempt     @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question       Question        @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selectedOption QuestionOption? @relation(fields: [selectedOptionId], references: [id], onDelete: SetNull)
+
+  @@index([attemptId])
+  @@index([questionId])
+  @@map("attempt_answers")
+}
+
+// ============================================
+// VECTOR SEARCH (pgvector readiness)
+// Future: run `CREATE EXTENSION IF NOT EXISTS vector;`
+// Future: uncomment the embedding field and run migration
+// ============================================
+
+model VectorDocument {
+  id          String             @id @default(cuid())
+  userId      String?
+  type        VectorDocumentType
+  referenceId String
+  content     String             @db.Text
+  embedding   Unsupported("vector(1536)")?
+  metadata    Json               @default("{}")
+  createdAt   DateTime           @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId, type])
+  @@index([type, referenceId])
+  @@map("vector_documents")
+}
+
+model SavedArticle {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  url       String
+  source    String?
+  imageUrl  String?
+  summary   String?  @db.Text
+  category    String   @default("technology")
+  publishedAt DateTime?
+  savedAt     DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, url])
+  @@index([userId])
+  @@map("saved_articles")
+}
+
+// ============================================
+// EYT (Enhance Your Thinking) MODELS
+// ============================================
+
+model EytChallenge {
+  id                   String             @id @default(cuid())
+  title                String
+  category             String
+  difficulty           EytDifficulty      @default(EASY)
+  description          String             @db.Text
+  referenceSolution    String             @db.Text
+  alternativeSolutions String[]           @default([])
+  industrySolution     String             @db.Text
+  xpReward             Int                @default(100)
+  isDaily              Boolean            @default(false)
+  isWeekly             Boolean            @default(false)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  // Challenge Ingestion metadata
+  weekNumber            Int?
+  year                  Int?
+  seasonNumber          Int?
+  seasonName            String?
+  sourceType            EytSourceType?
+  sourceName            String?            // SpaceX, Google, AWS, etc.
+  estimatedThinkingTime Int                @default(15) // minutes
+  skillsTested          String[]           @default([])
+  industryTags          String[]           @default([])
+  companyTags           String[]           @default([])
+  popularityScore       Float              @default(0.0)
+  difficultyScore       Float              @default(0.0)
+  thinkingDomains       String[]           @default([])
+  isArchived            Boolean            @default(false)
+  publishedDate         DateTime           @default(now())
+  createdBy             String?            @default("AI")
+  AIGenerated           Boolean            @default(true)
+  status                EytChallengeStatus @default(DRAFT)
+  currentVersion        Int                @default(1)
+  
+  // Real-time aggregated stats & Quality score
+  attemptsCount         Int                @default(0)
+  averageScore          Float              @default(0.0)
+  averageTimeSeconds    Int                @default(0)
+  successRate           Float              @default(0.0)
+  favoriteCount         Int                @default(0)
+  qualityScore          Float              @default(100.0) // 0-100 quality score
+  averageRating         Float              @default(0.0)
+  ratingsCount          Int                @default(0)
+
+  // Progressive Hint System
+  hint1                 String?            @db.Text
+  hint2                 String?            @db.Text
+  hint3                 String?            @db.Text
+
+  // Scheduling references
+  assignedDailyDate     DateTime?
+  assignedWeeklyDate    DateTime?
+  assignedMonthlyDate   DateTime?
+
+  // Dynamic fields
+  averageAuthenticity   Float              @default(100.0)
+  reflectionQuestions   String[]           @default([])
+  interviewPerspective  String?            @db.Text
+  industryPerspective   String?            @db.Text
+  followUpChallenges    String[]           @default([])
+  prerequisites         String[]           @default([])
+  learningResources     Json               @default("[]")
+  communityDifficulty   String?
+  editorial             Json?
+
+  attempts             EytAttempt[]
+  favorites            EytFavorite[]
+  discussions          EytDiscussion[]
+  ratings              EytRating[]
+  versions             EytChallengeVersion[]
+  collections          EytCollection[]
+  learningPaths        EytLearningPath[]
+  challengePacks       EytChallengePack[]
+  scheduleLogs         EytScheduleLog[]
+  difficultyVotes      EytDifficultyVote[]
+
+  // Indexes for high-performance retrieval and search queries
+  @@index([difficulty])
+  @@index([category])
+  @@index([weekNumber])
+  @@index([seasonNumber])
+  @@index([qualityScore])
+  @@index([averageRating])
+  @@index([attemptsCount])
+  @@index([industryTags(ops: ArrayOps)], type: Gin)
+  @@index([companyTags(ops: ArrayOps)], type: Gin)
+  @@index([thinkingDomains(ops: ArrayOps)], type: Gin)
+  @@map("eyt_challenges")
+}
+
+model EytChallengeVersion {
+  id            String       @id @default(cuid())
+  challengeId   String
+  version       Int
+  title         String
+  description   String       @db.Text
+  referenceSolution String   @db.Text
+  reason        String       @db.Text
+  updatedBy     String
+  createdAt     DateTime     @default(now())
+
+  challenge     EytChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  
+  @@map("eyt_challenge_versions")
+}
+
+model EytAttempt {
+  id                         String             @id @default(cuid())
+  challengeId                String
+  userId                     String
+  submittedAnswer            String             @db.Text
+  reflectionWhy              String             @db.Text
+  reflectionAlternatives     String             @db.Text
+  reflectionAssumptions      String             @db.Text
+  reflectionFailures         String             @db.Text
+  reflectionImprovement      String             @db.Text
+  reflectionTradeoffs        String             @db.Text
+  confidenceLevel            EytConfidenceLevel @default(MEDIUM)
+  hintsUsedCount             Int                @default(0)
+  
+  // Scoring breakdown
+  scoreLogicalReasoning      Int                @default(0)
+  scoreOriginality           Int                @default(0)
+  scoreDecomposition         Int                @default(0)
+  scoreAccuracy              Int                @default(0)
+  scoreCreativity            Int                @default(0)
+  scoreReflection            Int                @default(0)
+  scoreConfidenceCalibration Int                @default(0)
+  scoreOverall               Int                @default(0)
+
+  // AI Comparison / Authenticity
+  similarityPercent            Int              @default(0)
+  thinkingAuthenticityScore    Int              @default(100)
+  thinkingAuthenticityFeedback String           @db.Text
+  reflectionAfterSubmission    String?          @db.Text
+
+  reasoningDifference        String             @db.Text
+  feedbackOriginality        String             @db.Text
+  feedbackStrengths          String             @db.Text
+  feedbackWeaknesses         String             @db.Text
+  hiddenAssumptions          String             @db.Text
+  alternativePerspective     String             @db.Text
+  industryPerspective        String             @db.Text
+  interviewPerspective       String             @db.Text
+  learningResources          Json               @default("[]")
+  nextRecommendedChallengeId String?
+  thinkingTimeSeconds        Int                @default(0)
+  createdAt                  DateTime           @default(now())
+
+  challenge                  EytChallenge       @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  user                       User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([challengeId])
+  @@map("eyt_attempts")
+}
+
+model EytBadge {
+  id        String   @id @default(cuid())
+  userId    String
+  badgeType String
+  earnedAt  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeType])
+  @@map("eyt_badges")
+}
+
+model EytFavorite {
+  id          String   @id @default(cuid())
+  userId      String
+  challengeId String
+  createdAt   DateTime @default(now())
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge   EytChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, challengeId])
+  @@map("eyt_favorites")
+}
+
+model EytDiscussion {
+  id          String   @id @default(cuid())
+  challengeId String
+  userId      String
+  content     String   @db.Text
+  createdAt   DateTime @default(now())
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge   EytChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@index([challengeId])
+  @@map("eyt_discussions")
+}
+
+model EytRating {
+  id          String   @id @default(cuid())
+  challengeId String
+  userId      String
+  rating      Int      // 1 to 5 stars
+  createdAt   DateTime @default(now())
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge   EytChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, challengeId])
+  @@map("eyt_ratings")
+}
+
+enum EytDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  EXPERT
+  GRAND
+}
+
+enum EytConfidenceLevel {
+  VERY_LOW
+  LOW
+  MEDIUM
+  HIGH
+  VERY_HIGH
+}
+
+enum EytSourceType {
+  INTERVIEW
+  CASE_STUDY
+  ARCHITECTURE
+  PUZZLE
+  SYSTEM_DESIGN
+  PRODUCT
+  SECURITY
+}
+
+enum EytChallengeStatus {
+  DRAFT
+  AI_ENHANCED
+  PENDING_REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
+model EytCollection {
+  id          String   @id @default(cuid())
+  title       String   @unique
+  description String?  @db.Text
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  challenges  EytChallenge[]
+  @@map("eyt_collections")
+}
+
+model EytLearningPath {
+  id          String   @id @default(cuid())
+  title       String   @unique
+  description String?  @db.Text
+  badgeType   String?  // Earnable badge when completed
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  challenges  EytChallenge[]
+  @@map("eyt_learning_paths")
+}
+
+model EytChallengePack {
+  id          String   @id @default(cuid())
+  title       String   @unique
+  description String?  @db.Text
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  challenges  EytChallenge[]
+  @@map("eyt_challenge_packs")
+}
+
+model EytScheduleLog {
+  id          String   @id @default(cuid())
+  challengeId String
+  type        String   // DAILY, WEEKLY, MONTHLY
+  scheduledAt DateTime @default(now())
+
+  challenge   EytChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  @@index([scheduledAt])
+  @@index([type])
+  @@map("eyt_schedule_logs")
+}
+
+model EytDifficultyVote {
+  id          String   @id @default(cuid())
+  challengeId String
+  userId      String
+  vote        String   // EASY, MEDIUM, HARD
+  createdAt   DateTime @default(now())
+
+  challenge   EytChallenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, challengeId])
+  @@map("eyt_difficulty_votes")
+}
+
+// ============================================
+// HYBRID KNOWLEDGE GRAPH & STUDENT MASTERY MODELS
+// ============================================
+
+enum KnowledgeNodeType {
+  CONCEPT
+  SKILL
+  CHALLENGE
+  QUESTION
+  ROADMAP_STEP
+}
+
+enum KnowledgeRelationship {
+  PREREQUISITE_FOR
+  TEACHES
+  TESTED_BY
+  RELATED_TO
+  PART_OF
+  REQUIRES
+}
+
+enum MasteryStatus {
+  WEAK_IN
+  LEARNING
+  MASTERED
+}
+
+model KnowledgeNode {
+  id          String            @id @default(cuid())
+  name        String
+  slug        String            @unique
+  type        KnowledgeNodeType
+  description String?           @db.Text
+  difficulty  String?           @default("INTERMEDIATE")
+  metadata    Json              @default("{}")
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  outgoingEdges  KnowledgeEdge[]         @relation("SourceNode")
+  incomingEdges  KnowledgeEdge[]         @relation("TargetNode")
+  studentMastery StudentConceptMastery[]
+  graphEmbedding GraphNodeEmbedding?
+
+  @@index([type])
+  @@index([slug])
+  @@map("knowledge_nodes")
+}
+
+model KnowledgeEdge {
+  id           String                @id @default(cuid())
+  sourceId     String
+  targetId     String
+  relationship KnowledgeRelationship
+  weight       Float                 @default(1.0)
+  provenance   String                @default("EXPLICIT") // EXPLICIT, DERIVED, AI
+  metadata     Json                  @default("{}")
+  createdAt    DateTime              @default(now())
+
+  sourceNode KnowledgeNode @relation("SourceNode", fields: [sourceId], references: [id], onDelete: Cascade)
+  targetNode KnowledgeNode @relation("TargetNode", fields: [targetId], references: [id], onDelete: Cascade)
+
+  @@unique([sourceId, targetId, relationship])
+  @@index([sourceId])
+  @@index([targetId])
+  @@index([relationship])
+  @@map("knowledge_edges")
+}
+
+model StudentConceptMastery {
+  id             String        @id @default(cuid())
+  userId         String
+  nodeId         String
+  masteryScore   Float         @default(0.0) // 0.0 to 1.0
+  confidence     Float         @default(0.5) // 0.0 to 1.0
+  status         MasteryStatus @default(LEARNING)
+  attemptsCount  Int           @default(0)
+  lastAssessedAt DateTime      @default(now())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  user User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  node KnowledgeNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, nodeId])
+  @@index([userId, status])
+  @@map("student_concept_mastery")
+}
+
+model GraphNodeEmbedding {
+  id         String   @id @default(cuid())
+  nodeId     String   @unique
+  model      String   @default("deepwalk-node2vec")
+  dimensions Int      @default(128)
+  embedding  Unsupported("vector(128)")?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  node KnowledgeNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@map("graph_node_embeddings")
+}

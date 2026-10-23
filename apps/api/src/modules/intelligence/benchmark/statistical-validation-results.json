@@ -1,0 +1,140 @@
+{
+  "validatedMetrics": {
+    "VECTOR_ONLY": {
+      "name": "A. Vector Only",
+      "sampleSize": 50,
+      "p5": 0.272,
+      "r5": 0.6167,
+      "mrr": 0.5747,
+      "ndcg5": 0.5134
+    },
+    "GRAPH_ONLY": {
+      "name": "B. Graph Only",
+      "sampleSize": 50,
+      "p5": 0.28,
+      "r5": 0.6233,
+      "mrr": 0.5333,
+      "ndcg5": 0.4939
+    },
+    "HYBRID": {
+      "name": "C. Hybrid (Graph + Vector)",
+      "sampleSize": 50,
+      "p5": 0.296,
+      "r5": 0.6567,
+      "mrr": 0.5867,
+      "ndcg5": 0.5336
+    },
+    "HYBRID_CONTEXT": {
+      "name": "D. Hybrid + Student Context",
+      "sampleSize": 50,
+      "p5": 0.432,
+      "r5": 0.9667,
+      "mrr": 0.94,
+      "ndcg5": 0.898
+    },
+    "HYBRID_GRAPH_EMBEDDING": {
+      "name": "E. Hybrid + Context + Graph Embedding",
+      "sampleSize": 50,
+      "p5": 0.428,
+      "r5": 0.9567,
+      "mrr": 0.89,
+      "ndcg5": 0.8784
+    }
+  },
+  "statisticalComparisons": [
+    {
+      "comparison": "Vector -> Graph",
+      "testUsed": "Paired Wilcoxon Signed-Rank Test",
+      "zScore": -0.372,
+      "pValue": 0.7233,
+      "isSignificant": "NO (p >= 0.05)"
+    },
+    {
+      "comparison": "Graph -> Hybrid",
+      "testUsed": "Paired Wilcoxon Signed-Rank Test",
+      "zScore": 1.717,
+      "pValue": 0.0856,
+      "isSignificant": "NO (p >= 0.05)"
+    },
+    {
+      "comparison": "Hybrid -> Context",
+      "testUsed": "Paired Wilcoxon Signed-Rank Test",
+      "zScore": 5.777,
+      "pValue": 0.001,
+      "isSignificant": "YES (p < 0.05)"
+    },
+    {
+      "comparison": "Context -> Graph Embedding",
+      "testUsed": "Paired Wilcoxon Signed-Rank Test",
+      "zScore": -1,
+      "pValue": 0.322,
+      "isSignificant": "NO (p >= 0.05)"
+    }
+  ],
+  "categoryBreakdown": [
+    {
+      "category": "Prerequisite Discovery",
+      "Vector": 0.4825,
+      "Graph": 0.6209,
+      "Hybrid": 0.6502,
+      "Hybrid_Context": 0.8966,
+      "Hybrid_GraphEmbedding": 0.8745
+    },
+    {
+      "category": "Concept Similarity",
+      "Vector": 0.5434,
+      "Graph": 0.3972,
+      "Hybrid": 0.4151,
+      "Hybrid_Context": 0.8372,
+      "Hybrid_GraphEmbedding": 0.8333
+    },
+    {
+      "category": "Related Concept Discovery",
+      "Vector": 0.679,
+      "Graph": 0.5405,
+      "Hybrid": 0.7185,
+      "Hybrid_Context": 0.9778,
+      "Hybrid_GraphEmbedding": 0.9812
+    },
+    {
+      "category": "Skill Recommendation",
+      "Vector": 0.4963,
+      "Graph": 0.6204,
+      "Hybrid": 0.6217,
+      "Hybrid_Context": 0.9621,
+      "Hybrid_GraphEmbedding": 0.9553
+    },
+    {
+      "category": "Next-Learning Recommendation",
+      "Vector": 0.3479,
+      "Graph": 0.4986,
+      "Hybrid": 0.4232,
+      "Hybrid_Context": 0.839,
+      "Hybrid_GraphEmbedding": 0.7995
+    },
+    {
+      "category": "Weak-Area Recommendation",
+      "Vector": 0.4662,
+      "Graph": 0.468,
+      "Hybrid": 0.4947,
+      "Hybrid_Context": 0.9221,
+      "Hybrid_GraphEmbedding": 0.8844
+    },
+    {
+      "category": "Goal-Based Recommendation",
+      "Vector": 0.5368,
+      "Graph": 0.5071,
+      "Hybrid": 0.5908,
+      "Hybrid_Context": 0.9155,
+      "Hybrid_GraphEmbedding": 0.8726
+    },
+    {
+      "category": "General Educational Retrieval",
+      "Vector": 0.5534,
+      "Graph": 0.3081,
+      "Hybrid": 0.3634,
+      "Hybrid_Context": 0.8429,
+      "Hybrid_GraphEmbedding": 0.8342
+    }
+  ]
+}

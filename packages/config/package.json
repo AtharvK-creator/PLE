@@ -1,0 +1,19 @@
+{
+  "name": "@ple/config",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": "./index.js",
+    "./eslint": "./eslint-preset.js",
+    "./prettier": "./prettier-preset.js",
+    "./tsconfig": "./tsconfig"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.2"
+  }
+}

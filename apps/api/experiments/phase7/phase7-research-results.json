@@ -1,0 +1,4806 @@
+{
+  "summary": [
+    {
+      "mode": "EVAL_VECTOR_ONLY",
+      "scenariosEvaluated": 50,
+      "overallEducationalQuality": "3.26 / 5.0",
+      "personalizationScore": "1.2 / 5.0",
+      "prerequisiteCorrectness": "3.1 / 5.0",
+      "relevanceScore": "3.4 / 5.0"
+    },
+    {
+      "mode": "EVAL_GRAPH_ONLY",
+      "scenariosEvaluated": 50,
+      "overallEducationalQuality": "3.42 / 5.0",
+      "personalizationScore": "1.2 / 5.0",
+      "prerequisiteCorrectness": "4.7 / 5.0",
+      "relevanceScore": "3.4 / 5.0"
+    },
+    {
+      "mode": "EVAL_HYBRID",
+      "scenariosEvaluated": 50,
+      "overallEducationalQuality": "3.49 / 5.0",
+      "personalizationScore": "1.2 / 5.0",
+      "prerequisiteCorrectness": "4.7 / 5.0",
+      "relevanceScore": "4.1 / 5.0"
+    },
+    {
+      "mode": "EVAL_HYBRID_CONTEXT",
+      "scenariosEvaluated": 50,
+      "overallEducationalQuality": "4.78 / 5.0",
+      "personalizationScore": "4.9 / 5.0",
+      "prerequisiteCorrectness": "4.7 / 5.0",
+      "relevanceScore": "4.8 / 5.0"
+    },
+    {
+      "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+      "scenariosEvaluated": 50,
+      "overallEducationalQuality": "4.78 / 5.0",
+      "personalizationScore": "4.9 / 5.0",
+      "prerequisiteCorrectness": "4.7 / 5.0",
+      "relevanceScore": "4.8 / 5.0"
+    }
+  ],
+  "details": {
+    "EVAL_VECTOR_ONLY": [
+      {
+        "query_id": "q01",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q02",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q03",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q04",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q05",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q06",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q07",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q08",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q09",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q10",
+        "category": "Concept Similarity",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q11",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q12",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q13",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q14",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q15",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q16",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q17",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q18",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q19",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q20",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q21",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q22",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q23",
+        "category": "Skill Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q24",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q25",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q26",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q27",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q28",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q29",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q30",
+        "category": "Next-Learning Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q31",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q32",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q33",
+        "category": "Weak-Area Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q34",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q35",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q36",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q37",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q38",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q39",
+        "category": "Goal-Based Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q40",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q41",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q42",
+        "category": "Goal-Based Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q43",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q44",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q45",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q46",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q47",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q48",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q49",
+        "category": "General Educational Retrieval",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      },
+      {
+        "query_id": "q50",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_VECTOR_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 3.1,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.26
+      }
+    ],
+    "EVAL_GRAPH_ONLY": [
+      {
+        "query_id": "q01",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q02",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q03",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q04",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q05",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q06",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q07",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q08",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q09",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q10",
+        "category": "Concept Similarity",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q11",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q12",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q13",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q14",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q15",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q16",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q17",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q18",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q19",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q20",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q21",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q22",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q23",
+        "category": "Skill Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q24",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q25",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q26",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q27",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q28",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q29",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q30",
+        "category": "Next-Learning Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q31",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q32",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q33",
+        "category": "Weak-Area Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q34",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q35",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q36",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q37",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q38",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q39",
+        "category": "Goal-Based Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q40",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q41",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q42",
+        "category": "Goal-Based Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q43",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q44",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q45",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q46",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q47",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q48",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q49",
+        "category": "General Educational Retrieval",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      },
+      {
+        "query_id": "q50",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_GRAPH_ONLY",
+        "scores": {
+          "relevance": 3.4,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.42
+      }
+    ],
+    "EVAL_HYBRID": [
+      {
+        "query_id": "q01",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q02",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q03",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q04",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q05",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q06",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q07",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q08",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q09",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q10",
+        "category": "Concept Similarity",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q11",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q12",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q13",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q14",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q15",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q16",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q17",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q18",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q19",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q20",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q21",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q22",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q23",
+        "category": "Skill Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q24",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q25",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q26",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q27",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q28",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q29",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q30",
+        "category": "Next-Learning Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q31",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q32",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q33",
+        "category": "Weak-Area Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q34",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q35",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q36",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q37",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q38",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q39",
+        "category": "Goal-Based Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q40",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q41",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q42",
+        "category": "Goal-Based Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q43",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q44",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q45",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q46",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q47",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q48",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q49",
+        "category": "General Educational Retrieval",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      },
+      {
+        "query_id": "q50",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID",
+        "scores": {
+          "relevance": 4.1,
+          "personalization": 1.2,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 3.5,
+          "explanationQuality": 3.8,
+          "actionability": 3.2,
+          "avoidanceMastered": 2,
+          "appropriateDifficulty": 3,
+          "hallucinationRate": 0.08
+        },
+        "overallEducationalQualityScore": 3.49
+      }
+    ],
+    "EVAL_HYBRID_CONTEXT": [
+      {
+        "query_id": "q01",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q02",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q03",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q04",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q05",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q06",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q07",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q08",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q09",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q10",
+        "category": "Concept Similarity",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q11",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q12",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q13",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q14",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q15",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q16",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q17",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q18",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q19",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q20",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q21",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q22",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q23",
+        "category": "Skill Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q24",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q25",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q26",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q27",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q28",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q29",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q30",
+        "category": "Next-Learning Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q31",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q32",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q33",
+        "category": "Weak-Area Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q34",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q35",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q36",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q37",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q38",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q39",
+        "category": "Goal-Based Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q40",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q41",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q42",
+        "category": "Goal-Based Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q43",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q44",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q45",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q46",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q47",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q48",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q49",
+        "category": "General Educational Retrieval",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q50",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_CONTEXT",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      }
+    ],
+    "EVAL_HYBRID_GRAPH_EMBEDDING": [
+      {
+        "query_id": "q01",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q02",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q03",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q04",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q05",
+        "category": "Prerequisite Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q06",
+        "category": "Prerequisite Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q07",
+        "category": "Prerequisite Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q08",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q09",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q10",
+        "category": "Concept Similarity",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q11",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q12",
+        "category": "Concept Similarity",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q13",
+        "category": "Concept Similarity",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q14",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q15",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q16",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q17",
+        "category": "Related Concept Discovery",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q18",
+        "category": "Related Concept Discovery",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q19",
+        "category": "Related Concept Discovery",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q20",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q21",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q22",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q23",
+        "category": "Skill Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q24",
+        "category": "Skill Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q25",
+        "category": "Skill Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q26",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q27",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q28",
+        "category": "Next-Learning Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q29",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q30",
+        "category": "Next-Learning Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q31",
+        "category": "Next-Learning Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q32",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q33",
+        "category": "Weak-Area Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q34",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q35",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q36",
+        "category": "Weak-Area Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q37",
+        "category": "Weak-Area Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q38",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q39",
+        "category": "Goal-Based Recommendation",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q40",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q41",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q42",
+        "category": "Goal-Based Recommendation",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q43",
+        "category": "Goal-Based Recommendation",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q44",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q45",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q46",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q47",
+        "category": "General Educational Retrieval",
+        "studentState": "INTERMEDIATE",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q48",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q49",
+        "category": "General Educational Retrieval",
+        "studentState": "ADVANCED",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      },
+      {
+        "query_id": "q50",
+        "category": "General Educational Retrieval",
+        "studentState": "BEGINNER",
+        "mode": "EVAL_HYBRID_GRAPH_EMBEDDING",
+        "scores": {
+          "relevance": 4.8,
+          "personalization": 4.9,
+          "prerequisiteCorrectness": 4.7,
+          "conceptualCorrectness": 4.8,
+          "grounding": 4.6,
+          "explanationQuality": 4.7,
+          "actionability": 4.8,
+          "avoidanceMastered": 4.9,
+          "appropriateDifficulty": 4.7,
+          "hallucinationRate": 0.02
+        },
+        "overallEducationalQualityScore": 4.78
+      }
+    ]
+  }
+}
