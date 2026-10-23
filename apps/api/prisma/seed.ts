@@ -984,34 +984,6 @@ async function seedUsers(): Promise<void> {
     console.log(`   ✓ Seeded Student user: ${studentEmail} / password123`);
   }
 
-  // Seed user starcak06@gamil.com
-  const customUserEmail = 'starcak06@gamil.com';
-  const existingCustomUser = await prisma.user.findUnique({
-    where: { email: customUserEmail },
-  });
-
-  if (!existingCustomUser) {
-    const hashedPassword = await bcrypt.hash('Atharv@2006', 12);
-    await prisma.user.create({
-      data: {
-        email: customUserEmail,
-        password: hashedPassword,
-        emailVerified: true,
-        role: 'STUDENT',
-        profile: {
-          create: {
-            name: 'Atharv',
-            branch: 'Computer Science',
-            semester: 3,
-            careerGoal: 'Software Engineer',
-            skillLevel: 'BEGINNER',
-          },
-        },
-      },
-    });
-    console.log(`   ✓ Seeded User: starcak06@gamil.com / Atharv@2006`);
-  }
-
   // Check if admin exists
   const existingAdmin = await prisma.user.findUnique({
     where: { email: adminEmail },

@@ -34,8 +34,8 @@ export class GlobalExceptionFilter implements ExceptionFilter {
         error = (resp.error as string) || 'HTTP_ERROR';
       }
     } else if (exception instanceof Error) {
-      message = exception.message;
       this.logger.error(`Unhandled exception: ${exception.message}`, exception.stack);
+      message = process.env.NODE_ENV === 'production' ? 'Internal server error' : exception.message;
     }
 
     // Don't log 4xx errors as errors
@@ -43,7 +43,6 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       this.logger.error(`[${requestId}] ${request.method} ${request.url} - ${status}: ${message}`);
     } else {
       this.logger.warn(`[${requestId}] ${request.method} ${request.url} - ${status}: ${message}`);
-      this.logger.warn(`[${requestId}] Request Headers: ${JSON.stringify(request.headers)}`);
     }
 
     if (status === 401 && request.url.includes('/auth/refresh')) {

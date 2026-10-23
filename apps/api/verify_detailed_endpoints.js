@@ -173,7 +173,7 @@ async function runDetailedTrace() {
   const apiKey = process.env.GEMINI_API_KEY;
   console.log('1. Verify GEMINI_API_KEY loaded:');
   if (apiKey) {
-    console.log(`   [PASS] GEMINI_API_KEY is loaded. (Starts with: ${apiKey.substring(0, 5)}, Length: ${apiKey.length})`);
+    console.log('   [PASS] GEMINI_API_KEY is loaded.');
   } else {
     console.log('   [FAIL] GEMINI_API_KEY is not loaded!');
     process.exit(1);

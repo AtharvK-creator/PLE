@@ -2,7 +2,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 // Load environment variables via Node.js native --env-file option
 
 const apiKey = process.env.GEMINI_API_KEY;
-console.log('1. Loaded API Key:', apiKey ? 'Loaded (Length: ' + apiKey.length + ', Starts with: ' + apiKey.substring(0, 5) + ')' : 'Not Loaded');
+console.log('1. Loaded API Key:', apiKey ? 'Loaded (Present: true)' : 'Not Loaded');
 
 if (!apiKey) {
   console.error('Error: GEMINI_API_KEY is not set in environment.');

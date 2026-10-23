@@ -49,3 +49,10 @@ apps/api/prisma/migrations/*.sql
 
 # Misc
 .netlify
+
+# User Uploads & Runtime File Storage
+/uploads/
+/apps/api/uploads/avatars/*
+!/apps/api/uploads/avatars/.gitkeep
+/apps/api/uploads/tutor/*
+!/apps/api/uploads/tutor/.gitkeep
